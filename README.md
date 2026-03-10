@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Chatterbox TTS
+
+Test locally:
+
+```bash
+modal run chatterbox_tts.py \
+  --prompt "Hello from Chatterbox [chuckle]." \
+  --voice-key "voices/system/<voice-id>"
+```
+
+Test via CURL:
+
+```bash
+curl -X POST "https://<your-modal-endpoint>/generate" \
+  -H "Content-Type: application/json" \
+  -H "X-Api-Key: <your-api-key>" \
+  -d '{"prompt": "Hello from Chatterbox [chuckle].", "voice_key": "voices/system/<voice-id>"}' \
+  --output output.wav
+```
