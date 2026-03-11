@@ -26,7 +26,7 @@ export async function GET(
     }
 
     if (!generation.r2ObjectKey) {
-        return new Response("Audio is not available yet", { status: 4040 });
+        return new Response("Audio is not available yet", { status: 404 });
     }
 
     const signedUrl = await getSignedAudioUrl(generation.r2ObjectKey);
