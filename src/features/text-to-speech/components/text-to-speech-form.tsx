@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { formOptions } from "@tanstack/react-form";
 import { useMutation } from "@tanstack/react-query";
 
-import { useTRPC } from "@/app/trpc/client";
+import { useTRPC } from "@/trpc/client";
 import { useAppForm } from "@/hooks/use-app-form";
 
 const ttsFormSchema = z.object({

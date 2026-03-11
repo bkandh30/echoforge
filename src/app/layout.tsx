@@ -3,7 +3,7 @@ import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ClerkProvider } from "@clerk/nextjs";
-import { TRPCReactProvider } from "@/app/trpc/client";
+import { TRPCReactProvider } from "@/trpc/client";
 
 
 const inter = Inter({

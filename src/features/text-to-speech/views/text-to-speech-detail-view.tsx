@@ -2,7 +2,7 @@
 
 import { useSuspenseQueries } from "@tanstack/react-query";
 
-import { useTRPC } from "@/app/trpc/client";
+import { useTRPC } from "@/trpc/client";
 import { TextInputPanel } from "@/features/text-to-speech/components/text-input-panel";
 import { SettingsPanel } from "@/features/text-to-speech/components/settings-panel";
 import {
