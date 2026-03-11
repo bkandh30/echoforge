@@ -58,7 +58,7 @@ export const generationsRouter = createTRPCRouter({
                     id: input.voiceId,
                     OR: [
                         { variant: "SYSTEM" },
-                        { variant: "CUSTOM", orgId: ctx.orgId, } 
+                        { variant: "CUSTOM", orgId: ctx.orgId },
                     ],
                 },
                 select: {
@@ -105,7 +105,7 @@ export const generationsRouter = createTRPCRouter({
             if (!(data instanceof ArrayBuffer)) {
                 throw new TRPCError({
                     code: "INTERNAL_SERVER_ERROR",
-                    message: "Invalid audio response format",
+                    message: "Invalid audio response",
                 });
             }
 
@@ -131,7 +131,7 @@ export const generationsRouter = createTRPCRouter({
                 });
 
                 generationId = generation.id;
-                r2ObjectKey = `generations/orgs/${ctx.orgId}/${generationId}`;
+                r2ObjectKey = `generations/orgs/${ctx.orgId}/${generation.id}`;
 
                 await uploadAudio({ buffer, key: r2ObjectKey });
 
