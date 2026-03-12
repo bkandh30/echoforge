@@ -15,6 +15,7 @@ import { TEXT_MAX_LENGTH, COST_PER_UNIT } from "@/features/text-to-speech/data/c
 
 import { ttsFormOptions } from "@/features/text-to-speech/components/text-to-speech-form";
 import { GenerateButton } from "@/features/text-to-speech/components/generate-button";
+import { PromptSuggestions } from "@/features/text-to-speech/components/prompt-suggestions";
 
 export function TextInputPanel() {
     const form = useTypedAppFormContext(ttsFormOptions);
@@ -88,9 +89,9 @@ export function TextInputPanel() {
                     </div>
                 ) : (
                     <div className="hidden lg:block">
-                        <p className="text-sm text-muted-foreground">
-                            Get started by typing or pasting text above
-                        </p>
+                        <PromptSuggestions 
+                            onSelect={(prompt) => form.setFieldValue("text", prompt)}
+                        />
                     </div>
                 )}
             </div>
